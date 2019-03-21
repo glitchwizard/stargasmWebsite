@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Particles from 'react-particles-js';
+import stargasmLogo from '../src/assets/2018-02-18---Stargasm-logo2_02.png';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div className="App-header">
+        LISTEN TO
+          <img src={stargasmLogo} className="App-logo" alt="logo" />
+        </div>
+        <Particles 
+                height = "100vh"
+                width = "100vw"
+                style = {
+                    {
+                      position: 'fixed',
+                      top: '0px',
+                      margin: '0',
+                      padding: '0',
+                      zIndex: '-1',
+                      backgroundColor: '#000000'
+                    }
+                  }/>
       </div>
     );
   }
