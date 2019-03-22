@@ -14,7 +14,16 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: gray;
+}
+
+.vid {
+  z-index: -2;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .App-link {
