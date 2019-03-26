@@ -1,8 +1,9 @@
 .App {
+  color: white;
 }
 
 .App-logo {
-  animation: StargasmLogoAnimation infinite 0.5s linear;
+  animation: StargasmLogoAnimation infinite 0.65217391304s linear;
   height: 40vmin;
   pointer-events: none;
 }
@@ -42,21 +43,62 @@
 
 }
 
+#unMuteButtonIcon {
+  height: 100%;
+}
+
+#playButtonIcon {
+  height: 100%;
+}
+
+#pauseButtonIcon {
+  height: 100%
+}
+
+.unMuteButtonContainer {
+  height: 78%;
+  width: 82%;
+  border: 5px solid white;
+  border-radius: 100%;
+}
+
+.youtubePlayerContainer {
+  height: 100%;
+  width: 100%;
+}
+
 span {
   text-align: center;
-  border: 1px solid red;
+}
+
+.headerBar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 60px;
+}
+
+.headerItem {
+  margin: 10px;
+  height: 100%
+}
+
+#volumeHeader {
+  padding: 0;
+  margin: 0;
+  color: white;
 }
 
 @keyframes HeroFadeIn {
-  20% {
+  30% {
     opacity: 1;
   }
 
-  25%{
+  35%{
     opacity: 0;
   }
 
-  95%{
+  80%{
     opacity: 0;
   }
 
