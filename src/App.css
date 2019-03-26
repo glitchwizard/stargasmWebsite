@@ -1,5 +1,5 @@
 .App {
-
+  color: white;
 }
 
 .App-logo {
@@ -48,10 +48,8 @@
 }
 
 .unMuteButtonContainer {
-
   height: 50px;
   border: 1px solid red;
-
 }
 
 .youtubePlayerContainer {
@@ -62,6 +60,11 @@
 span {
   text-align: center;
   border: 1px solid red;
+}
+
+.headerBar {
+  display: flex;
+  justify-content: flex-end;
 }
 
 @keyframes HeroFadeIn {
