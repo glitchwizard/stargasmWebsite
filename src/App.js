@@ -112,7 +112,6 @@ class App extends Component {
             alt="logo" />
         <div className="headerBar">
           <div className="headerItem">
-              
              <input
                 type="range"
                 value={volume}
