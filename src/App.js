@@ -4,88 +4,79 @@ import Particles from 'react-particles-js';
 import stargasmLogo from '../src/assets/2018-02-18---Stargasm-logo2_02.png';
 import particleConfig from './assets/particlesjs-config.json';
 import YouTube from 'react-youtube';
+import muteButton from './assets/Mute_Icon.svg';
 import unMuteButton from './assets/Speaker_Icon.svg';
+import pauseButton from './assets/pauseButton.svg';
+import playButton from './assets/playButton.svg';
 
 class App extends Component {
   constructor(props) {
     super(props);
     
     this.state = {
-      volume: 0.2,
+      volume: 20,
       paused: false,
-      mute: true
+      player: null
     };
-    
+    this._onReady = this._onReady.bind(this);
     this.toggleMute = this.toggleMute.bind(this);
-    this.handlePause = this.handlePause.bind(this);
     this.handlePlayerPause = this.handlePlayerPause.bind(this);
     this.handlePlayerPlay = this.handlePlayerPlay.bind(this);
     this.handleVolume = this.handleVolume.bind(this);
-  }
-
-  handlePause(event) {
-    this.setState({
-      paused: event.target.checked,
-    });
+    this.togglePlay = this.togglePlay.bind(this);
   }
 
   handlePlayerPause() {
     this.setState({paused: true});
+    this.state.player.pauseVideo();
   }
 
   handlePlayerPlay() {
     this.setState({paused: false});
+    this.state.player.playVideo();
   }
 
   handleVolume(event) {
-    this.setState({
-      volume: parseFloat(event.target.value),
-    });
-  }
-
-  handleVolumeUp(event){
-    let currentVolume = parseFloat(this.state.volume);
-    if (currentVolume < 1) {
-      currentVolume += .10
-      this.setState({
-        volume: currentVolume
-      })
-    }
-    
-  }
-
-  handleVolumeDown(event){
-    let currentVolume = parseFloat(this.state.volume);
-    if (currentVolume < 1) {
-      currentVolume += .10
-      this.setState({
-        volume: currentVolume
-      })
-    }
+    this.setState({volume: event.target.value});
+    this.state.player.setVolume(event.target.value);
   }
  
 
-_onReady(event){
-  event.target.mute();
+  _onReady(event){
+    this.setState({
+      player: event.target,
+      muteButtonToggle: unMuteButton,
+      playButtonState: pauseButton
+    });
+    this.state.player.setVolume(20);
+  }
 
-}
+  toggleMute(){
+    if(this.state.player.isMuted()){
+      this.setState({muteButtonToggle: unMuteButton});
+      this.state.player.unMute();
+    } else {
+      this.setState({muteButtonToggle: muteButton});
+      this.state.player.mute();
+    }
+  }
 
-toggleMute(event){
-  alert('event' + event.target);
-  console.log('event: \n' + event);
-
- if(event.target.isMuted()){
-   event.target.unMute();
- } else {
-   event.target.mute();
- }
-}
+  togglePlay(){
+    console.log(this.state);
+    if (this.state.paused){
+      this.setState({playButtonState: pauseButton});
+      this.handlePlayerPlay();
+    } else {
+      this.setState({playButtonState: playButton});
+      this.handlePlayerPause();
+    }
+  }
 
 
   render() {
 
     const {
-      volume, paused, suggestedQuality,
+      volume, paused
     } = this.state;
 
     const youTubeOptions = {
@@ -109,16 +100,9 @@ toggleMute(event){
               containerClassName='youtubePlayerContainer'
               opts={youTubeOptions}
               onReady={this._onReady}
-            />
+              />
       </div>
-        <div className="headerBar">
-          <div>
-            Volume controls will go here
-          </div>
-          <div className="unMuteButtonContainer" onClick={this.toggleMute}>
-            <img src={unMuteButton} alt='Unmute Button' id="unMuteButtonIcon"/>
-          </div>
-        </div>
+
           
       <div className="App-header" >
         <div className='AppText'>
@@ -126,7 +110,29 @@ toggleMute(event){
           <img src={stargasmLogo}
             className="App-logo"
             alt="logo" />
+        <div className="headerBar">
+          <div className="headerItem">
+              
+             <input
+                type="range"
+                value={volume}
+                min={0}
+                max={100}
+                step={1}
+                onChange={this.handleVolume}
+            />
+              <h6 id="volumeHeader">Volume: {this.state.volume}</h6> 
+          </div>
+              <div className="headerItem" onClick={this.togglePlay}>
+                <img src={this.state.playButtonState} alt='Play/Mute button' id="playButtonIcon" />
+          </div>
+          <div className="headerItem">
+            <div className="unMuteButtonContainer" onClick={this.toggleMute}>
+              <img src={this.state.muteButtonToggle} alt='Unmute Button' id="unMuteButtonIcon"/>
+            </div>
+          </div>
         </div>
+      </div>
       </div>
       <Particles
         height="100vh"
