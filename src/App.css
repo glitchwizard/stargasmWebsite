@@ -1,4 +1,5 @@
 .App {
+
 }
 
 .App-logo {
@@ -42,17 +43,33 @@
 
 }
 
+#unMuteButtonIcon {
+  height: 100%;
+}
+
+.unMuteButtonContainer {
+
+  height: 50px;
+  border: 1px solid red;
+
+}
+
+.youtubePlayerContainer {
+  height: 100%;
+  width: 100%;
+}
+
 span {
   text-align: center;
   border: 1px solid red;
 }
 
 @keyframes HeroFadeIn {
-  20% {
+  30% {
     opacity: 1;
   }
 
-  25%{
+  35%{
     opacity: 0;
   }
 
