@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ee989167-c174-4c34-a143-317522c78192/deploy-status)](https://app.netlify.com/sites/stargasmic/deploys)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
