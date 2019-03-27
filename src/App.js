@@ -87,7 +87,8 @@ class App extends Component {
         controls: 0,
         loop: 1,
         enablejsapi: 1,
-        iv_load_policy: 3
+        iv_load_policy: 3,
+        modestbranding: 1
       }
     }
 
