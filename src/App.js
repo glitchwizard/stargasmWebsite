@@ -113,7 +113,7 @@ class App extends Component {
           playButtonState={this.state.playButtonState}
           muteButtonToggle={this.state.muteButtonToggle}
         />
-        <div className="App-header" onClick={this.state.player.playVideo()}>
+        <div className="App-header" onClick={()=>this.state.player.playVideo()}>
           <div className='AppText'>
             <div className='callToAction'> LISTEN TO </div>
             <img src={stargasmLogo}
