@@ -51,7 +51,7 @@ class App extends Component {
       player: event.target,
 
     });
-    this.state.player.playVideo();
+    setTimeout(this.state.player.playVideo(),250);
     this.state.player.setVolume(20);
   }
 
