@@ -1,0 +1,30 @@
+.headerBar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: .75em;
+}
+
+.headerItem {
+    margin: 10px;
+    height: 100%
+}
+
+#volumeHeader {
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+#unMuteButtonIcon {
+    height: 100%;
+}
+
+#playButtonIcon {
+    height: 100%;
+}
+
+.unMuteButtonContainer {
+    height: 100%;
+    font-family: none;
+}
