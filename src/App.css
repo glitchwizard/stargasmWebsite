@@ -6,6 +6,7 @@
   animation: StargasmLogoAnimation infinite 0.65217391304s linear;
   height: 40vmin;
   pointer-events: none;
+  opacity: 0.725;
 }
 
 .App-header {
@@ -43,23 +44,8 @@
 
 }
 
-#unMuteButtonIcon {
-  height: 100%;
-}
+img {
 
-#playButtonIcon {
-  height: 100%;
-}
-
-#pauseButtonIcon {
-  height: 100%
-}
-
-.unMuteButtonContainer {
-  height: 78%;
-  width: 82%;
-  border: 5px solid white;
-  border-radius: 100%;
 }
 
 .youtubePlayerContainer {
@@ -71,23 +57,6 @@ span {
   text-align: center;
 }
 
-.headerBar {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 60px;
-}
-
-.headerItem {
-  margin: 10px;
-  height: 100%
-}
-
-#volumeHeader {
-  padding: 0;
-  margin: 0;
-  color: white;
-}
 
 @keyframes HeroFadeIn {
   30% {
