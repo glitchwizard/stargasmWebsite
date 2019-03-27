@@ -88,7 +88,8 @@ class App extends Component {
         loop: 1,
         enablejsapi: 1,
         iv_load_policy: 3,
-        modestbranding: 1
+        modestbranding: 1,
+        playlist: 'lpMESlFzTx0'
       }
     }
 
