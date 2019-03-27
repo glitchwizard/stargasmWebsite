@@ -1,13 +1,24 @@
+.componentStyle{
+    display: block;
+    position: sticky;
+    top: 0;
+    height: 3.5em;
+    padding-top: 1em;
+}
+
 .headerBar {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: .75em;
+    height: 2em;
+    margin-right: 1em;
+    margin-left: 1em;
 }
 
 .headerItem {
-    margin: 10px;
-    height: 100%
+    margin: 0.5em;
+    height: 100%;
+    padding: 1em 0;
 }
 
 #volumeHeader {
@@ -27,4 +38,9 @@
 .unMuteButtonContainer {
     height: 100%;
     font-family: none;
+}
+
+h5 {
+    margin: 0;
+    padding: 0;
 }

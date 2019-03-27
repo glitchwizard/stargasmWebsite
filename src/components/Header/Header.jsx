@@ -6,8 +6,11 @@ import PropTypes from 'prop-types';
 class Header extends React.Component {
 
     render(){
-        return <div>
+        return <div className="componentStyle">
             <div className="headerBar">
+                
+                <div className="headerItem">
+                </div>
                 <div className="headerItem">
                     <input
                         type="range"
